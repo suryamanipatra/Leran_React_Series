@@ -27,7 +27,7 @@ function App() {
   ,[length,numAllow,charAllow,setPassword])
   const copyPassword = useCallback(() =>{
     passwordRef.current?.select();
-    passwordRef.current?.setSelectionRange(0,3);
+    passwordRef.current?.setSelectionRange(0,length);
     window.navigator.clipboard.writeText(password)
     setCoppied("Copied");
     setTimeout(() =>{
@@ -67,3 +67,5 @@ function App() {
 }
 
 export default App
+
+
