@@ -19,13 +19,13 @@ export default function Footer() {
                         <div>
                             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">Resources</h2>
                             <ul className="text-gray-500 font-medium">
-                                <li className="mb-4">
-                                    <Link to="/" className="hover:underline">
+                                <li className = "mb-4">
+                                    <Link to="/" className= {({isActive})=> `"hover:underline ${isActive?"text-orange-400" : "text-gray-700"}"`}>
                                         Home
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/about" className="hover:underline">
+                                    <Link to="/about" className= {({isActive})=> `"hover:underline ${isActive?"text-orange-400" : "text-gray-700"}"`}>
                                         About
                                     </Link>
                                 </li>
@@ -160,3 +160,4 @@ export default function Footer() {
         </footer>
     );
 }
+
