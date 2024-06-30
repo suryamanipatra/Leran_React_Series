@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from 'react';
+import { useLoaderData } from 'react-router-dom';
 
 function Github() {
-    const [userData, setUserData] = useState({});
+    // const [userData, setUserData] = useState({});
     const [repos, setRepos] = useState([]);
 
+    const userData = useLoaderData()
     useEffect(() => {
-        fetch('https://api.github.com/users/AbinashGouda2002')
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                setUserData(data);
-            });
+    //     fetch('https://api.github.com/users/suryamanipatra ')
+    //         .then(response => response.json())
+    //         .then(data => {
+    //             console.log(data);
+    //             setUserData(data);
+    //         });
 
-        fetch('https://api.github.com/users/AbinashGouda2002/repos')
+        fetch('https://api.github.com/users/suryamanipatra/repos')
             .then(response => response.json())
             .then(reposData => {
                 console.log(reposData);
@@ -56,3 +58,7 @@ function Github() {
 }
 
 export default Github;
+export const githubInfoLoader = async() =>{
+    const response = await fetch('https://api.github.com/users/suryamanipatra')
+    return response.json()
+}
